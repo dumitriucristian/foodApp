@@ -15,7 +15,7 @@ class SecondPage extends StatelessWidget {
             ctrl.clearTextInput();
           },
         ),
-        title: Text('App Bar'),
+        title: Text('Pentru mine'),
       ),
       body: Column(
         children: [
@@ -24,7 +24,10 @@ class SecondPage extends StatelessWidget {
               builder: (_) => ListView.builder(
                 itemCount: ctrl.foodList.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return ListTile(title: Text(ctrl.foodList[index].name));
+                  return ListTile(
+                    title: Text(ctrl.foodList[index].name),
+                    subtitle: Text(ctrl.foodList[index].type),
+                  );
                 },
               ),
             ),
