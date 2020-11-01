@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 import 'package:flutter_app_test/Model/Food.dart';
 import 'package:flutter_app_test/Controllers/FoodsController.dart';
 import 'package:flutter_app_test/Views/SecondPage.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_app_test/Views/ThirdPage.dart';
 
 class HomePage extends StatelessWidget {
   final FoodsController foodsController = Get.put(FoodsController());
@@ -29,14 +32,21 @@ class HomePage extends StatelessWidget {
                 decoration: InputDecoration(hintText: "Food Type"),
               ),
               ElevatedButton(
-                child: Text("Add"),
-                onPressed: () {
-                  foodsController.foodList.add(Food(
-                      name: "${foodsController.foodNameController.text}",
-                      type: "${foodsController.foodTypeController.text}"));
-                  Get.to(SecondPage());
-                },
-              ),
+                  child: Text("Add"),
+                  onPressed: () {
+                    foodsController.foodList.add(Food(
+                        name: "${foodsController.foodNameController.text}",
+                        type: "${foodsController.foodTypeController.text}"));
+                    Get.to(SecondPage());
+                  }),
+              ElevatedButton(
+                  child: Text("Go to third page"),
+                  onPressed: () {
+                    foodsController.foodList.add(Food(
+                        name: "${foodsController.foodNameController.text}",
+                        type: "${foodsController.foodTypeController.text}"));
+                    Get.to(ThirdPage());
+                  }),
             ],
           ),
         ),
