@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_app_test/Components/MainNav.dart';
 
 class ThirdPage extends StatelessWidget {
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: MainNav(),
       appBar: AppBar(
         leading: new IconButton(
           icon: new Icon(Icons.arrow_back),

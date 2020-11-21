@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_app_test/Model/Food.dart';
 import 'package:flutter_app_test/Controllers/FoodsController.dart';
+import 'package:flutter_app_test/Components/MainNav.dart';
 import 'package:flutter_app_test/Views/SecondPage.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_app_test/Views/ThirdPage.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,6 +12,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: MainNav(),
       appBar: AppBar(
         title: Text('Add your food'),
       ),
